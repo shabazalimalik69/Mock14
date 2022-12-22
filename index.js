@@ -8,7 +8,11 @@ const app = express();
 
 app.use(express.json())
 app.use(cors());
-app.use("/",questionRouter)
+app.use("/",questionRouter);
+
+app.get("/",(req,res)=>{
+    res.send("HomePage")
+})
 
 app.listen(PORT,async()=>{
     await connectDB()
