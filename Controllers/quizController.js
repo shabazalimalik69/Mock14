@@ -7,7 +7,7 @@ const getQuestion = async (req, res) => {
     } = req.query;
    try {
      if (category && difficulty) {
-       let question = await Quiz.find({
+       let question = await Questions.find({
          category: category,
          difficulty: difficulty,
        })
